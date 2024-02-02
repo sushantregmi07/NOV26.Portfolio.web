@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/NOV26Portfolioweb.props" />
+</Project>
