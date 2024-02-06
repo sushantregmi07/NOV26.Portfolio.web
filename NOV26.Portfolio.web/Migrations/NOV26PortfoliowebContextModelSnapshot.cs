@@ -65,6 +65,40 @@ namespace NOV26.Portfolio.web.Migrations
 
                     b.ToTable("PersonalInformationModel");
                 });
+
+            modelBuilder.Entity("NOV26.Portfolio.web.Models.ResumeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("DESC");
+
+                    b.Property<int>("EndYear")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("END_YEAR");
+
+                    b.Property<string>("InstitutionName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("INSTITUTION_NAME");
+
+                    b.Property<int>("StartYear")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("START_YEAR");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("TITLE");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ResumeModel");
+                });
 #pragma warning restore 612, 618
         }
     }

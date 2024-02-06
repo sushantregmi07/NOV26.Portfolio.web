@@ -31,10 +31,18 @@ public class HomeController : Controller
         model.Resumes = new List<ResumeModel>();
         model.Resumes.Add(new ResumeModel()
         {
-            StartYear = 2019,
-            EndYear = 2021,
+            StartYear = 2014,
+            EndYear = 2015,
             Title = "Master Degree of Design",
             InstitutionName = "Cambridge University",
+            Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
+        });
+        model.Resumes.Add(new ResumeModel()
+        {
+            StartYear = 2016,
+            EndYear = 2018,
+            Title = "Master Degree of Design",
+            InstitutionName = "Tribhuwan University",
             Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
         });
         model.Resumes.Add(new ResumeModel()
@@ -42,23 +50,15 @@ public class HomeController : Controller
             StartYear = 2019,
             EndYear = 2021,
             Title = "Master Degree of Design",
-            InstitutionName = "Cambridge University",
+            InstitutionName = "Kathmandu University",
             Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
         });
         model.Resumes.Add(new ResumeModel()
         {
-            StartYear = 2019,
-            EndYear = 2021,
+            StartYear = 2021,
+            EndYear = 2023,
             Title = "Master Degree of Design",
-            InstitutionName = "Cambridge University",
-            Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
-        });
-        model.Resumes.Add(new ResumeModel()
-        {
-            StartYear = 2019,
-            EndYear = 2021,
-            Title = "Master Degree of Design",
-            InstitutionName = "Cambridge University",
+            InstitutionName = "Pokhara University",
             Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
         });
         return View(model);

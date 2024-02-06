@@ -15,5 +15,6 @@ namespace NOV26.Portfolio.web.Data
         }
 
         public DbSet<NOV26.Portfolio.web.Models.PersonalInformationModel> PersonalInformationModel { get; set; } = default!;
+        public DbSet<NOV26.Portfolio.web.Models.ResumeModel> ResumeModel { get; set; } = default!;
     }
 }

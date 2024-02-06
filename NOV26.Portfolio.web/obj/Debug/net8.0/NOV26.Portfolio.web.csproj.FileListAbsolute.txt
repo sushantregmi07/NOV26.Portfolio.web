@@ -276,3 +276,4 @@
 /Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/obj/Debug/net8.0/NOV26.Portfolio.web.genruntimeconfig.cache
 /Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/obj/Debug/net8.0/ref/NOV26.Portfolio.web.dll
 /Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/bin/Debug/net8.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/obj/Debug/net8.0/NOV26.Portfolio.web.sourcelink.json
