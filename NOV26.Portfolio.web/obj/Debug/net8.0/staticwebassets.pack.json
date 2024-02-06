@@ -8341,6 +8341,10 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
+      "Id": "/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/wwwroot/uploads/Image.jpg",
+      "PackagePath": "staticwebassets/uploads/Image.jpg"
+    },
+    {
       "Id": "/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/wwwroot/uploads/Screenshot 2023-12-23 at 9.38.21\u202FPM.png",
       "PackagePath": "staticwebassets/uploads/Screenshot 2023-12-23 at 9.38.21\u202FPM.png"
     },

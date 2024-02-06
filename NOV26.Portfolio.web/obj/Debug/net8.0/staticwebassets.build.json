@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w6oHKHbW/JH+AUtAzREOylvz5XTm5kMsXKVMsoi53x8=",
+  "Hash": "DsOmtM8AscHHtnHxMWOlMZQpQOw+V3fYFaqKLvhtrf4=",
   "Source": "NOV26.Portfolio.web",
   "BasePath": "_content/NOV26.Portfolio.web",
   "Mode": "Default",
@@ -36438,6 +36438,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/wwwroot/uploads/Image.jpg",
+      "SourceId": "NOV26.Portfolio.web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/wwwroot/",
+      "BasePath": "_content/NOV26.Portfolio.web",
+      "RelativePath": "uploads/Image.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/Image.jpg"
     },
     {
       "Identity": "/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/wwwroot/uploads/Screenshot 2023-12-23 at 9.38.21\u202FPM.png",

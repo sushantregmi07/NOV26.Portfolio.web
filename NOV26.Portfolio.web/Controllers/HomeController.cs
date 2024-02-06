@@ -17,7 +17,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        HomeViewModel model = new HomeViewModel()
+        /*HomeViewModel model = new HomeViewModel()
         {
             FullName = "Sushant Regmi",
             Address = "Kathmandu",
@@ -28,7 +28,19 @@ public class HomeController : Controller
             Summary = "Asp.Net Developer with one year of experience",
             Title = "Asp.Net Developer",
             ZipCode = "44600"
-        };
+        };*/
+        HomeViewModel model = new HomeViewModel();
+        var personalInformation = _context.PersonalInformationModel.FirstOrDefault();
+        model.FullName = personalInformation.FullName;
+        model.Address = personalInformation.Address;
+        model.Email = personalInformation.Email;
+        model.Phone = personalInformation.Phone;
+        model.CompletedProjects = personalInformation.CompletedProjects;
+        model.DOB = personalInformation.DOB;
+        model.Summary = personalInformation.Summary;
+        model.Title = personalInformation.Title;
+        model.ZipCode = personalInformation.ZipCode;
+        model.UserPhotoUrl = personalInformation.UserPhotoUrl;
 
         model.Resumes = _context.ResumeModel.ToList();
         return View(model);
