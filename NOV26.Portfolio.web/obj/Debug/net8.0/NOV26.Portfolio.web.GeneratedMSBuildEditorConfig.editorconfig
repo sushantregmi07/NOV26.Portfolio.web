@@ -74,6 +74,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdW1lTW9kZWxzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/ServiceModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZU1vZGVscy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/ServiceModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZU1vZGVscy9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/ServiceModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZU1vZGVscy9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/ServiceModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZU1vZGVscy9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/ServiceModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZU1vZGVscy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

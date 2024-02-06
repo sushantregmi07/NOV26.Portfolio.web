@@ -99,6 +99,31 @@ namespace NOV26.Portfolio.web.Migrations
 
                     b.ToTable("ResumeModel");
                 });
+
+            modelBuilder.Entity("NOV26.Portfolio.web.Models.ServiceModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Icon")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ServiceModel");
+                });
 #pragma warning restore 612, 618
         }
     }
