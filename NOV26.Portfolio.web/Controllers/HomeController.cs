@@ -6,11 +6,13 @@ namespace NOV26.Portfolio.web.Controllers;
 
 public class HomeController : Controller
 {
+    private Data.NOV26PortfoliowebContext _context;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, Data.NOV26PortfoliowebContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
@@ -28,39 +30,7 @@ public class HomeController : Controller
             ZipCode = "44600"
         };
 
-        model.Resumes = new List<ResumeModel>();
-        model.Resumes.Add(new ResumeModel()
-        {
-            StartYear = 2014,
-            EndYear = 2015,
-            Title = "Master Degree of Design",
-            InstitutionName = "Cambridge University",
-            Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
-        });
-        model.Resumes.Add(new ResumeModel()
-        {
-            StartYear = 2016,
-            EndYear = 2018,
-            Title = "Master Degree of Design",
-            InstitutionName = "Tribhuwan University",
-            Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
-        });
-        model.Resumes.Add(new ResumeModel()
-        {
-            StartYear = 2019,
-            EndYear = 2021,
-            Title = "Master Degree of Design",
-            InstitutionName = "Kathmandu University",
-            Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
-        });
-        model.Resumes.Add(new ResumeModel()
-        {
-            StartYear = 2021,
-            EndYear = 2023,
-            Title = "Master Degree of Design",
-            InstitutionName = "Pokhara University",
-            Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
-        });
+        model.Resumes = _context.ResumeModel.ToList();
         return View(model);
     }
 
