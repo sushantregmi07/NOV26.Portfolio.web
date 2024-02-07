@@ -43,6 +43,7 @@ public class HomeController : Controller
         model.UserPhotoUrl = personalInformation.UserPhotoUrl;
 
         model.Resumes = _context.ResumeModel.ToList();
+        model.Services = _context.ServiceModel.ToList();
         return View(model);
     }
 
