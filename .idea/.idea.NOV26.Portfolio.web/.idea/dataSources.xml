@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="NOV26PortfoliowebContext-357aecc6-b6d2-4216-8212-470b2f9fdc25.db" uuid="7bb33668-3f0d-441f-a24c-ab5be1ade28e">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/NOV26.Portfolio.web/NOV26PortfoliowebContext-357aecc6-b6d2-4216-8212-470b2f9fdc25.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
