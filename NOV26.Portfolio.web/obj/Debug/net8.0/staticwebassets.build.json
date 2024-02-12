@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MjLqp3dhUXvSiKvFvT0CtByIRNEsnNU8Na9oo4+57OY=",
+  "Hash": "MRT8he0Y5iht9+9Gv4biK3L+OHhLm+gzGwgrTW8P+VE=",
   "Source": "NOV26.Portfolio.web",
   "BasePath": "_content/NOV26.Portfolio.web",
   "Mode": "Default",
@@ -36457,6 +36457,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/uploads/Image.jpg"
+    },
+    {
+      "Identity": "/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/wwwroot/uploads/project-3.jpg",
+      "SourceId": "NOV26.Portfolio.web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/wwwroot/",
+      "BasePath": "_content/NOV26.Portfolio.web",
+      "RelativePath": "uploads/project-3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/project-3.jpg"
     },
     {
       "Identity": "/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/wwwroot/uploads/project-4.jpg",
