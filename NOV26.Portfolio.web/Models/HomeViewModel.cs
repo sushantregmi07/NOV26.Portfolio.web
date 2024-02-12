@@ -7,4 +7,5 @@ public class HomeViewModel:PersonalInformationModel
 
     public List<SkillModel> Skills { get; set; } = new List<SkillModel>();
     public List<ProjectModel> Projects { get; set; } = new List<ProjectModel>();
+    public List<BlogModel> Blogs { get; set; }
 }

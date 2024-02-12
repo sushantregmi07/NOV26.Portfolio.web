@@ -47,6 +47,7 @@ public class HomeController : Controller
         model.Services = _context.ServiceModel.ToList();
         model.Skills = _context.SkillModel.ToList();
         model.Projects = _context.ProjectModel.Include(x=> x.Service).ToList();
+        model.Blogs = _context.BlogModel.OrderByDescending(x => x.DateTime).Take(3).ToList();
         return View(model);
     }
 
@@ -59,5 +60,11 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    public IActionResult Blog(int id)
+    {
+        var blog = _context.BlogModel.Find(id);
+        return View(blog);
     }
 }
