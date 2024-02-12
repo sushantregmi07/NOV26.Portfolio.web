@@ -17,3 +17,8 @@ public class BlogModel
     public DateTime DateTime { get; set; } = DateTime.Now;
 
 }
+
+public class BlogViewModel:BlogModel
+{
+    public List<BlogCommentModel> comments { get; set; }
+}

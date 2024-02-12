@@ -60,11 +60,23 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
-
+    } 
+    
     public IActionResult Blog(int id)
     {
+        
         var blog = _context.BlogModel.Find(id);
-        return View(blog);
+        var comments = _context.BlogCommentModel.Where(x => x.BlogId == id).ToList();
+        BlogViewModel blogvm = new BlogViewModel()
+        {
+            ImageUrl = blog.ImageUrl,
+            DateTime = blog.DateTime,
+            Id = id,
+            Paragraph1 = blog.Paragraph1,
+            Paragraph2 = blog.Paragraph2,
+            Title = blog.Title,
+            comments = comments
+        };
+        return View(blogvm);
     }
 }

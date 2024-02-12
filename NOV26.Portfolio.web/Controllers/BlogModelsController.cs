@@ -165,5 +165,17 @@ namespace NOV26.Portfolio.web.Controllers
         {
             return _context.BlogModel.Any(e => e.Id == id);
         }
+        [HttpPost]
+        public IActionResult AddComment(BlogCommentModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.BlogCommentModel.Add(model);
+                _context.SaveChanges();
+                return Redirect("/Home/Blog/" + model.BlogId);
+            }
+            return Redirect("/Home/Blog/" + model.BlogId);
+            //return View("/views/home/blog.cshtml", );
+        }
     }
 }
