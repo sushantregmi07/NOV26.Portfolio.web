@@ -10,27 +10,22 @@ using NOV26.Portfolio.web.Models;
 
 namespace NOV26.Portfolio.web.Controllers
 {
-    
-    public class ServiceModelsController : Controller
+    public class SkillModelsController : Controller
     {
         private readonly NOV26PortfoliowebContext _context;
-        public string[] Icons;
 
-        public ServiceModelsController(NOV26PortfoliowebContext context)
+        public SkillModelsController(NOV26PortfoliowebContext context)
         {
             _context = context;
-            //Collections
-            Icons = new string[] { "flaticon-analysis", "flaticon-flasks", "flaticon-ideas" };
-            //Collec
         }
 
-        // GET: ServiceModels
+        // GET: SkillModels
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ServiceModel.ToListAsync());
+            return View(await _context.SkillModel.ToListAsync());
         }
 
-        // GET: ServiceModels/Details/5
+        // GET: SkillModels/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -38,41 +33,39 @@ namespace NOV26.Portfolio.web.Controllers
                 return NotFound();
             }
 
-            var serviceModel = await _context.ServiceModel
+            var skillModel = await _context.SkillModel
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (serviceModel == null)
+            if (skillModel == null)
             {
                 return NotFound();
             }
 
-            return View(serviceModel);
+            return View(skillModel);
         }
 
-        // GET: ServiceModels/Create
+        // GET: SkillModels/Create
         public IActionResult Create()
         {
-            ViewData["Icons"] = new SelectList(Icons);
             return View();
         }
 
-        // POST: ServiceModels/Create
+        // POST: SkillModels/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Icon,Description")] ServiceModel serviceModel)
+        public async Task<IActionResult> Create([Bind("Id,Name,SkillPct")] SkillModel skillModel)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(serviceModel);
+                _context.Add(skillModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Icons"] = new SelectList(Icons);
-            return View(serviceModel);
+            return View(skillModel);
         }
 
-        // GET: ServiceModels/Edit/5
+        // GET: SkillModels/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,23 +73,22 @@ namespace NOV26.Portfolio.web.Controllers
                 return NotFound();
             }
 
-            var serviceModel = await _context.ServiceModel.FindAsync(id);
-            if (serviceModel == null)
+            var skillModel = await _context.SkillModel.FindAsync(id);
+            if (skillModel == null)
             {
                 return NotFound();
             }
-            ViewData["Icons"] = new SelectList(Icons);
-            return View(serviceModel);
+            return View(skillModel);
         }
 
-        // POST: ServiceModels/Edit/5
+        // POST: SkillModels/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Icon,Description")] ServiceModel serviceModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,SkillPct")] SkillModel skillModel)
         {
-            if (id != serviceModel.Id)
+            if (id != skillModel.Id)
             {
                 return NotFound();
             }
@@ -105,12 +97,12 @@ namespace NOV26.Portfolio.web.Controllers
             {
                 try
                 {
-                    _context.Update(serviceModel);
+                    _context.Update(skillModel);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ServiceModelExists(serviceModel.Id))
+                    if (!SkillModelExists(skillModel.Id))
                     {
                         return NotFound();
                     }
@@ -121,11 +113,10 @@ namespace NOV26.Portfolio.web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Icons"] = new SelectList(Icons);
-            return View(serviceModel);
+            return View(skillModel);
         }
 
-        // GET: ServiceModels/Delete/5
+        // GET: SkillModels/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,34 +124,34 @@ namespace NOV26.Portfolio.web.Controllers
                 return NotFound();
             }
 
-            var serviceModel = await _context.ServiceModel
+            var skillModel = await _context.SkillModel
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (serviceModel == null)
+            if (skillModel == null)
             {
                 return NotFound();
             }
 
-            return View(serviceModel);
+            return View(skillModel);
         }
 
-        // POST: ServiceModels/Delete/5
+        // POST: SkillModels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var serviceModel = await _context.ServiceModel.FindAsync(id);
-            if (serviceModel != null)
+            var skillModel = await _context.SkillModel.FindAsync(id);
+            if (skillModel != null)
             {
-                _context.ServiceModel.Remove(serviceModel);
+                _context.SkillModel.Remove(skillModel);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ServiceModelExists(int id)
+        private bool SkillModelExists(int id)
         {
-            return _context.ServiceModel.Any(e => e.Id == id);
+            return _context.SkillModel.Any(e => e.Id == id);
         }
     }
 }

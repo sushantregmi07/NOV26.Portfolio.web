@@ -126,6 +126,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/SkillModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2tpbGxNb2RlbHMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/SkillModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2tpbGxNb2RlbHMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/SkillModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2tpbGxNb2RlbHMvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/SkillModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2tpbGxNb2RlbHMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/SkillModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2tpbGxNb2RlbHMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

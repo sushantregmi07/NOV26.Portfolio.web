@@ -44,6 +44,7 @@ public class HomeController : Controller
 
         model.Resumes = _context.ResumeModel.ToList();
         model.Services = _context.ServiceModel.ToList();
+        model.Skills = _context.SkillModel.ToList();
         return View(model);
     }
 

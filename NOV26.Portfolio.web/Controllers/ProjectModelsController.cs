@@ -10,27 +10,23 @@ using NOV26.Portfolio.web.Models;
 
 namespace NOV26.Portfolio.web.Controllers
 {
-    
-    public class ServiceModelsController : Controller
+    public class ProjectModelsController : Controller
     {
         private readonly NOV26PortfoliowebContext _context;
-        public string[] Icons;
 
-        public ServiceModelsController(NOV26PortfoliowebContext context)
+        public ProjectModelsController(NOV26PortfoliowebContext context)
         {
             _context = context;
-            //Collections
-            Icons = new string[] { "flaticon-analysis", "flaticon-flasks", "flaticon-ideas" };
-            //Collec
         }
 
-        // GET: ServiceModels
+        // GET: ProjectModels
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ServiceModel.ToListAsync());
+            var nOV26PortfoliowebContext = _context.ProjectModel.Include(p => p.Service);
+            return View(await nOV26PortfoliowebContext.ToListAsync());
         }
 
-        // GET: ServiceModels/Details/5
+        // GET: ProjectModels/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -38,41 +34,42 @@ namespace NOV26.Portfolio.web.Controllers
                 return NotFound();
             }
 
-            var serviceModel = await _context.ServiceModel
+            var projectModel = await _context.ProjectModel
+                .Include(p => p.Service)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (serviceModel == null)
+            if (projectModel == null)
             {
                 return NotFound();
             }
 
-            return View(serviceModel);
+            return View(projectModel);
         }
 
-        // GET: ServiceModels/Create
+        // GET: ProjectModels/Create
         public IActionResult Create()
         {
-            ViewData["Icons"] = new SelectList(Icons);
+            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Icon");
             return View();
         }
 
-        // POST: ServiceModels/Create
+        // POST: ProjectModels/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Icon,Description")] ServiceModel serviceModel)
+        public async Task<IActionResult> Create([Bind("Id,Title,ClientName,ServiceId")] ProjectModel projectModel)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(serviceModel);
+                _context.Add(projectModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Icons"] = new SelectList(Icons);
-            return View(serviceModel);
+            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Icon", projectModel.ServiceId);
+            return View(projectModel);
         }
 
-        // GET: ServiceModels/Edit/5
+        // GET: ProjectModels/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,23 +77,23 @@ namespace NOV26.Portfolio.web.Controllers
                 return NotFound();
             }
 
-            var serviceModel = await _context.ServiceModel.FindAsync(id);
-            if (serviceModel == null)
+            var projectModel = await _context.ProjectModel.FindAsync(id);
+            if (projectModel == null)
             {
                 return NotFound();
             }
-            ViewData["Icons"] = new SelectList(Icons);
-            return View(serviceModel);
+            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Icon", projectModel.ServiceId);
+            return View(projectModel);
         }
 
-        // POST: ServiceModels/Edit/5
+        // POST: ProjectModels/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Icon,Description")] ServiceModel serviceModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ClientName,ServiceId")] ProjectModel projectModel)
         {
-            if (id != serviceModel.Id)
+            if (id != projectModel.Id)
             {
                 return NotFound();
             }
@@ -105,12 +102,12 @@ namespace NOV26.Portfolio.web.Controllers
             {
                 try
                 {
-                    _context.Update(serviceModel);
+                    _context.Update(projectModel);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ServiceModelExists(serviceModel.Id))
+                    if (!ProjectModelExists(projectModel.Id))
                     {
                         return NotFound();
                     }
@@ -121,11 +118,11 @@ namespace NOV26.Portfolio.web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Icons"] = new SelectList(Icons);
-            return View(serviceModel);
+            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Icon", projectModel.ServiceId);
+            return View(projectModel);
         }
 
-        // GET: ServiceModels/Delete/5
+        // GET: ProjectModels/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,34 +130,35 @@ namespace NOV26.Portfolio.web.Controllers
                 return NotFound();
             }
 
-            var serviceModel = await _context.ServiceModel
+            var projectModel = await _context.ProjectModel
+                .Include(p => p.Service)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (serviceModel == null)
+            if (projectModel == null)
             {
                 return NotFound();
             }
 
-            return View(serviceModel);
+            return View(projectModel);
         }
 
-        // POST: ServiceModels/Delete/5
+        // POST: ProjectModels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var serviceModel = await _context.ServiceModel.FindAsync(id);
-            if (serviceModel != null)
+            var projectModel = await _context.ProjectModel.FindAsync(id);
+            if (projectModel != null)
             {
-                _context.ServiceModel.Remove(serviceModel);
+                _context.ProjectModel.Remove(projectModel);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ServiceModelExists(int id)
+        private bool ProjectModelExists(int id)
         {
-            return _context.ServiceModel.Any(e => e.Id == id);
+            return _context.ProjectModel.Any(e => e.Id == id);
         }
     }
 }
