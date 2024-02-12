@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NOV26.Portfolio.web.Models;
 
 namespace NOV26.Portfolio.web.Controllers;
@@ -45,6 +46,7 @@ public class HomeController : Controller
         model.Resumes = _context.ResumeModel.ToList();
         model.Services = _context.ServiceModel.ToList();
         model.Skills = _context.SkillModel.ToList();
+        model.Projects = _context.ProjectModel.Include(x=> x.Service).ToList();
         return View(model);
     }
 

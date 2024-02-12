@@ -6,4 +6,5 @@ public class HomeViewModel:PersonalInformationModel
     public List<ServiceModel> Services { get; set; }
 
     public List<SkillModel> Skills { get; set; } = new List<SkillModel>();
+    public List<ProjectModel> Projects { get; set; } = new List<ProjectModel>();
 }

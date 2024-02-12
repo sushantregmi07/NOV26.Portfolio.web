@@ -48,7 +48,7 @@ namespace NOV26.Portfolio.web.Controllers
         // GET: ProjectModels/Create
         public IActionResult Create()
         {
-            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Icon");
+            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Title");
             return View();
         }
 
@@ -57,15 +57,27 @@ namespace NOV26.Portfolio.web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,ClientName,ServiceId")] ProjectModel projectModel)
+        public async Task<IActionResult> Create([Bind("Id,Title,Width,ClientName,ServiceId")] ProjectModel projectModel, IFormFile ProjectImageUrl)
         {
+            if (ProjectImageUrl != null && ProjectImageUrl.Length > 0)
+            {
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", ProjectImageUrl.FileName);
+                //Using Buffering
+                using (var stream = System.IO.File.Create(filePath))
+                {
+                    //The file is saved in a buffer before being processed
+                    await ProjectImageUrl.CopyToAsync(stream);
+                }
+                projectModel.ProjectImageUrl = "/uploads/" + ProjectImageUrl.FileName;
+            }
             if (ModelState.IsValid)
             {
+                
                 _context.Add(projectModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Icon", projectModel.ServiceId);
+            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Title", projectModel.ServiceId);
             return View(projectModel);
         }
 
@@ -82,7 +94,7 @@ namespace NOV26.Portfolio.web.Controllers
             {
                 return NotFound();
             }
-            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Icon", projectModel.ServiceId);
+            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Title", projectModel.ServiceId);
             return View(projectModel);
         }
 
@@ -91,13 +103,23 @@ namespace NOV26.Portfolio.web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ClientName,ServiceId")] ProjectModel projectModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Width,ClientName,ServiceId")] ProjectModel projectModel, IFormFile ProjectImageUrl)
         {
             if (id != projectModel.Id)
             {
                 return NotFound();
             }
-
+            if (ProjectImageUrl != null && ProjectImageUrl.Length > 0)
+            {
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", ProjectImageUrl.FileName);
+                //Using Buffering
+                using (var stream = System.IO.File.Create(filePath))
+                {
+                    //The file is saved in a buffer before being processed
+                    await ProjectImageUrl.CopyToAsync(stream);
+                }
+                projectModel.ProjectImageUrl = "/uploads/" + ProjectImageUrl.FileName;
+            }
             if (ModelState.IsValid)
             {
                 try
@@ -118,7 +140,7 @@ namespace NOV26.Portfolio.web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Icon", projectModel.ServiceId);
+            ViewData["ServiceId"] = new SelectList(_context.ServiceModel, "Id", "Title", projectModel.ServiceId);
             return View(projectModel);
         }
 

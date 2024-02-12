@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NOV26.Portfolio.web.Data;
 
@@ -10,9 +11,11 @@ using NOV26.Portfolio.web.Data;
 namespace NOV26.Portfolio.web.Migrations
 {
     [DbContext(typeof(NOV26PortfoliowebContext))]
-    partial class NOV26PortfoliowebContextModelSnapshot : ModelSnapshot
+    [Migration("20240212094937_Projects")]
+    partial class Projects
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.1");
@@ -86,9 +89,6 @@ namespace NOV26.Portfolio.web.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("Width")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

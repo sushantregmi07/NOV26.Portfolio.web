@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -28,6 +28,23 @@
                 <label asp-for="ServiceId" class="control-label"></label>
                 <select asp-for="ServiceId" class="form-control" asp-items="ViewBag.ServiceId"></select>
                 <span asp-validation-for="ServiceId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Width" class="control-label"></label>
+                <select asp-for="Width" class="control-label valid" aria-invalid="false">
+                    <option value="2">col-lg-2</option>
+                    <option value="4">col-lg-4</option>
+                    <option value="6">col-lg-6</option>
+                    <option value="8">col-lg-8</option>
+                    <option value="10">col-lg-10</option>
+                    <option value="12">col-lg-12</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectImageUrl" class="control-label"></label>
+                <input type="file" accept="image/*" asp-for="ProjectImageUrl" class="form-control"/>
+                <span asp-validation-for="ProjectImageUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

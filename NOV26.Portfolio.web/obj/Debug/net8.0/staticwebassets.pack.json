@@ -8349,6 +8349,14 @@
       "PackagePath": "staticwebassets/uploads/Screenshot 2023-12-23 at 9.38.21\u202FPM.png"
     },
     {
+      "Id": "/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/wwwroot/uploads/project-4.jpg",
+      "PackagePath": "staticwebassets/uploads/project-4.jpg"
+    },
+    {
+      "Id": "/Users/sushantregmi/RiderProjects/NOV26.Portfolio.web/NOV26.Portfolio.web/wwwroot/uploads/project-5.jpg",
+      "PackagePath": "staticwebassets/uploads/project-5.jpg"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.NOV26.Portfolio.web.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
