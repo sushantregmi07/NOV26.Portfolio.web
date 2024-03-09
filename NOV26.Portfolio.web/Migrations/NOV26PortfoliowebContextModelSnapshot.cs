@@ -231,6 +231,25 @@ namespace NOV26.Portfolio.web.Migrations
                     b.ToTable("SkillModel");
                 });
 
+            modelBuilder.Entity("NOV26.Portfolio.web.Models.UserModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserModel");
+                });
+
             modelBuilder.Entity("NOV26.Portfolio.web.Models.BlogCommentModel", b =>
                 {
                     b.HasOne("NOV26.Portfolio.web.Models.BlogModel", "Blog")

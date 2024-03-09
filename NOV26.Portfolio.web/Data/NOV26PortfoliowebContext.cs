@@ -21,6 +21,7 @@ namespace NOV26.Portfolio.web.Data
         public DbSet<NOV26.Portfolio.web.Models.ProjectModel> ProjectModel { get; set; } = default!;
         public DbSet<NOV26.Portfolio.web.Models.BlogModel> BlogModel { get; set; } = default!;
         public DbSet<NOV26.Portfolio.web.Models.BlogCommentModel> BlogCommentModel { get; set; } = default!;
+        public DbSet<NOV26.Portfolio.web.Models.UserModel> UserModel { get; set; } = default!;
         
     }
 }
